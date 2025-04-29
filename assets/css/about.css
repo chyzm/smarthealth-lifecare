@@ -1,3 +1,9 @@
+:root {
+    --primary-team: #0d6efd;
+    --secondary: #6c757d;
+    --light: #f8f9fa;
+}
+
 /* Navbar background styling */
 .navbar {
     background: rgba(0, 0, 0, 0.7) !important; /* Black with 70% opacity */
@@ -148,114 +154,135 @@
 
 /* Team Section */
 
+.team-section {
+    background-color: var(--light);
+    padding: 80px 0;
+}
+
+.section-title {
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    color: var(--secondary);
+    font-size: 1.1rem;
+}
+
 .team-card {
-    background: white;
-    border-radius: 8px;
-    padding: 30px 20px 25px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: all 0.3s;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.team-description {
-    border-top: 1px solid rgba(42,157,143,0.1);
-    padding-top: 15px;
-}
-
-.team-description p {
-    font-size: 0.9rem;
-    color: #6c757d;
-    line-height: 1.5;
-    margin-bottom: 0;
+    flex-direction: column;
 }
 
 .team-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.team-img {
-    position: relative;
+.team-img-container {
+    height: 280px;
     overflow: hidden;
 }
 
-.team-img img {
+.team-img-container img {
     width: 100%;
-    height: 250px;
+    height: 100%;
     object-fit: cover;
-    transition: all 0.5s;
+    transition: transform 0.5s ease;
 }
 
-.team-card:hover .team-img img {
-    transform: scale(1.1);
-}
-
-.team-social {
-    position: absolute;
-    bottom: -50px;
-    left: 0;
-    width: 100%;
-    background: rgba(42,157,143,0.9);
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    transition: all 0.3s;
-}
-
-.team-card:hover .team-social {
-    bottom: 0;
-}
-
-
-
-.team-social a {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-    border-radius: 50%;
-    background: rgba(42,157,143,0.1);
-    transition: all 0.3s;
-}
-
-
-
-.team-social a:hover {
-    background: var(--primary-color);
-    color: white !important;
-    transform: translateY(-3px);
+.team-card:hover .team-img-container img {
+    transform: scale(1.05);
 }
 
 .team-info {
-    padding: 20px;
-    text-align: center;
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-
-
-.team-info h4 {
-    color: var(--secondary-color);
-    margin-bottom: 10px;
-    font-size: 1.25rem;
+.team-info h3 {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #212529;
 }
 
-.team-info p {
-    color: #6c757d;
-    font-size: 0.9rem;
+.team-info .position {
+    color: var(--primary-team);
+    font-weight: 500;
+    margin-bottom: 15px;
 }
 
-@media (max-width: 767px) {
-    .team-card {
-        padding: 20px 15px;
-    }
+.team-description {
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
 
-    .team-description p {
-        font-size: 0.85rem;
+.short-description {
+    display: block;
+    color: var(--secondary);
+}
+
+.full-description {
+    max-height: 0;
+    overflow: hidden;
+    color: var(--secondary);
+    transition: max-height 0.5s ease;
+}
+
+.full-description.show {
+    max-height: 500px;
+    padding-top: 10px;
+}
+
+.read-more-btn {
+    color: var(--primary-team);
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.read-more-btn:hover {
+    text-decoration: underline;
+}
+
+.read-more-btn:after {
+    content: '+';
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.read-more-btn[aria-expanded="true"]:after {
+    content: '-';
+}
+
+.social-link-about {
+    margin-top: 15px;
+}
+
+.social-link-about a {
+    color: var(--secondary);
+    margin: 0 8px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-link-about a:hover {
+    color: var(--primary-team);
+}
+
+@media (max-width: 768px) {
+    .team-img-container {
+        height: 220px;
     }
 }
 

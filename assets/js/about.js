@@ -93,3 +93,31 @@ if (backToTopButton) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
+   // Initialize AOS animation
+   AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true
+});
+
+// Enhanced expand/collapse functionality
+         
+document.addEventListener('DOMContentLoaded', function() {
+
+// Handle Bootstrap collapse events
+document.querySelectorAll('.full-description').forEach(collapseElement => {
+collapseElement.addEventListener('show.bs.collapse', function() {
+const button = document.querySelector(`[href="#${this.id}"]`);
+button.textContent = 'Read less';
+button.setAttribute('aria-expanded', 'true');
+ });
+                
+ collapseElement.addEventListener('hide.bs.collapse', function() {
+ const button = document.querySelector(`[href="#${this.id}"]`);
+ button.textContent = 'Read more';
+ button.setAttribute('aria-expanded', 'false');
+               
+       });
+    });
+});

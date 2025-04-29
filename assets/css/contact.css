@@ -1,0 +1,246 @@
+/* Contact Page Specific Styles */
+.contact-hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, rgba(42, 157, 143, 0.1) 0%, rgba(38, 70, 83, 0.1) 100%) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: rgba(42, 157, 143, 0.05);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.contact-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: -150px;
+    width: 400px;
+    height: 400px;
+    background: rgba(233, 196, 106, 0.05);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.contact-method {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.contact-method:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(42, 157, 143, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.contact-method:hover .contact-icon {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.contact-details {
+    margin-top: 20px;
+}
+
+.contact-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    word-break: break-all;
+}
+
+.contact-link:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Locations Section */
+.locations-section {
+    background: white;
+}
+
+.location-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.location-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.location-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.location-map {
+    height: 250px;
+    overflow: hidden;
+}
+
+.location-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.location-details {
+    padding: 25px;
+}
+
+.location-details h3 {
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.location-details p {
+    margin-bottom: 15px;
+    color: #6c757d;
+}
+
+.location-details i {
+    color: var(--primary-color);
+    margin-right: 8px;
+    width: 20px;
+    text-align: center;
+}
+
+.location-contact p {
+    margin-bottom: 8px;
+}
+
+/* Contact Form Section */
+.form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.form-control, .form-select {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(42, 157, 143, 0.25);
+}
+
+/* Emergency Banner */
+.emergency-banner {
+    background: linear-gradient(135deg, #e63946 0%, #d90429 100%);
+    color: white;
+}
+
+.emergency-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.emergency-icon {
+    font-size: 2.5rem;
+    animation: pulse 1.5s infinite;
+}
+
+.emergency-text h3 {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+.emergency-number .btn {
+    animation: pulse 1.5s infinite;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .contact-hero {
+        padding: 100px 0 60px;
+    }
+    
+    .emergency-content {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero {
+        padding: 80px 0 40px;
+        text-align: center;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-title{
+        margin-top: 20px;
+    }
+    
+    .form-container {
+        padding: 30px 20px;
+    }
+}
+
+/* Animation for form submission */
+@keyframes formSubmit {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.form-submitting {
+    animation: formSubmit 1.5s ease-in-out;
+}

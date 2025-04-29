@@ -1,0 +1,213 @@
+/* Services Page Specific Styles */
+.services-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.7)), 
+                url('/assets/img/service-hero-img.jpg') center/cover no-repeat;
+}
+
+.hero-buttons{
+    z-index: 99;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    z-index: -1;
+}
+
+.breadcrumb-container {
+    background-color: #f8f9fa;
+    padding: 15px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.breadcrumb {
+    margin-bottom: 0;
+}
+
+.service-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-card.specialty {
+    border-top: 4px solid var(--primary-color);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(42, 157, 143, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.service-content h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.service-features {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.service-features li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: #6c757d;
+}
+
+.service-features li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.btn-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.btn-link:hover {
+    color: var(--secondary-color);
+}
+
+.btn-link i {
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+.btn-link:hover i {
+    transform: translateX(5px);
+}
+
+/* Service Details */
+.details-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.details-image img {
+    transition: transform 0.5s;
+}
+
+.details-image:hover img {
+    transform: scale(1.05);
+}
+
+.approach-list {
+    margin-top: 30px;
+}
+
+.approach-item {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.approach-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(42, 157, 143, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.approach-text h4 {
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+}
+
+.cta-box {
+    background: rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.cta-title {
+    margin-bottom: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .services-hero {
+        height: 50vh;
+        min-height: 400px;
+        
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .service-card {
+        padding: 20px;
+    }
+    
+    .service-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .cta-box {
+        text-align: center;
+        padding: 30px 20px;
+    }
+    
+    .cta-box .btn {
+        margin-top: 15px;
+    }
+}
